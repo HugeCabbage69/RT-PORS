@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#map {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+#blur {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  pointer-events: none;
+  z-index: 999999;
+}
+
+/*----DO NOT TOUCH----*/
+.leaflet-pane {
+  z-index: 9999;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 99999999;
+}
+
+.leaflet-control-attribution {
+  background: rgba(255,255,255,0.85);
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 11px;
+}
+/*----------------------*/
