@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+  <title>RT-PORS | Status</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <link rel="stylesheet" href="status.css"/>
+</head>
+<body>
+
+  <div id="map">
+
+    <div id="topbar">
+      <div id="logo" onclick="go('index.html')">
+        <img src="images/imglogo.png">
+        <span>RT-PORS</span>
+      </div>
+
+      <div id="buttons">
+        <button class="btn" onclick="go('status.html')">STATUS</button>
+        <button class="btn">REPORT</button>
+        <button class="btn">ABOUT</button>
+      </div>
+
+      <div id="profile">
+        <div id="profileb">
+          <img src="images/profile.png">
+        </div>
+
+        <div id="profileblock">
+          <div class="popupt" onclick="link('/login')">Login</div>
+          <div class="popupt" onclick="link('/register')">Register</div>
+          <div class="popupt" onclick="link('/logout')">Logout</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="status.js"></script>
+  <script src="profile.js"></script>
+  <script>
+  function go(p) {
+    window.location.href = p;
+  }
+  </script>
+</body>
+</html>

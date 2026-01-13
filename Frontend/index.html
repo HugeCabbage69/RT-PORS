@@ -14,19 +14,31 @@
 
   <div id="map">
 
-    <div id="topbar">
-      <div id="logo">
-        <img src="images/imglogo.png">
-        <span>RT-PORS</span>
-      </div>
+      <div id="topbar">
+        <div id="logo" onclick="go('index.html')">
+          <img src="images/imglogo.png">
+          <span>RT-PORS</span>
+        </div>
 
-      <div id="buttons">
-        <button class="btn">Report</button>
-        <button class="btn">Status</button>
-        <button class="btn">Help</button>
+        <div id="buttons">
+          <button class="btn" onclick="go('status.html')">STATUS</button>
+          <button class="btn">REPORT</button>
+          <button class="btn">ABOUT</button>
+        </div>
+
+        <div id="profile">
+          <div id="profileb">
+            <img src="images/profile.png">
+          </div>
+
+          <div id="profileblock">
+            <div class="popupt" onclick="link('/login')">Login</div>
+            <div class="popupt" onclick="link('/register')">Register</div>
+            <div class="popupt" onclick="link('/logout')">Logout</div>
+          </div>
+        </div>
       </div>
     </div>
-
     <div id="biglogo">
       <img src="images/frontpage.png"/>
     </div>
@@ -37,5 +49,11 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="map.js"></script>
+  <script src="profile.js"></script>
+  <script>
+  function go(p) {
+    window.location.href = p;
+  }
+  </script>
 </body>
 </html>
