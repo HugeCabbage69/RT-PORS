@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <head>
   <title>RT-PORS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   />
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+
   <div id="map">
+
+    <div id="topbar">
+      <div id="logo">
+        <img src="images/frontpage.png">
+        <span>RT-PORS</span>
+      </div>
+
+      <div id="buttons">
+        <button class="btn">Report</button>
+        <button class="btn">Status</button>
+        <button class="btn">Help</button>
+      </div>
+    </div>
+
+    <div id="biglogo">
+      <img src="images/frontpage.png"/>
+    </div>
+
     <div id="blur"></div>
+
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
