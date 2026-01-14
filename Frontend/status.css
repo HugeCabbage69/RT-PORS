@@ -12,7 +12,6 @@ html, body {
 #map {
   height: 100vh;
   width: 100vw;
-  position: relative;
 }
 
 #topbar {
@@ -25,12 +24,9 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 0 20px;
   background: rgba(0,0,0,0.85);
   backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-
   z-index: 9999999;
 }
 
@@ -41,6 +37,7 @@ html, body {
   color: white;
   font-size: 20px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 #logo img {
@@ -111,10 +108,6 @@ html, body {
 
 .popupt:last-child {
   border-bottom: none;
-}
-
-.leaflet-pane {
-  z-index: 1;
 }
 
 .leaflet-top,

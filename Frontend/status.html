@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <title>RT-PORS | Status</title>
+  <title>RT-PORS Status</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <link
@@ -21,7 +21,7 @@
       </div>
 
       <div id="buttons">
-        <button class="btn" onclick="go('status.html')">STATUS</button>
+        <button class="btn">STATUS</button>
         <button class="btn">REPORT</button>
         <button class="btn">ABOUT</button>
       </div>
@@ -38,17 +38,22 @@
         </div>
       </div>
     </div>
-  </div>
 
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="status.js"></script>
   <script src="profile.js"></script>
+
   <script>
-  function go(p) {
-    window.location.href = p;
-  }
+    function go(p) {
+      window.location.href = p;
+    }
+
+    function link(r) {
+      alert("Backend: " + r);
+    }
   </script>
+
 </body>
 </html>
