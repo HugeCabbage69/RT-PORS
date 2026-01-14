@@ -1,5 +1,5 @@
 from fastapi import APIRouter,HTTPException
-from schemas.register import RegisterUser
+from schemas.register_schema import RegisterUser
 
 import json
 import os

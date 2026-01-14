@@ -1,7 +1,6 @@
 from fastapi import APIRouter,Header
-from schemas.otp import LoginRequest, OTPVerify
+from schemas.otp_schema import OTP
 import random
-import time
 import json
 import os
 
@@ -28,72 +27,17 @@ def write_json(path: str, data: dict):
 
 
 # ---------- Routes ----------
-@router.get("/me")
-def get_profile(token: str = Header(None)):
-    if not token:
-        return {"error": "Unauthorized"}
 
-    phone = token.replace("TOKEN-", "")
-    users = read_json(USERS_FILE)
-
-    user = users.get(phone)
-    if not user:
-        return {"error": "User not found"}
-
-    return user
-
-
+# STILL HAVE TO MAKE A WORKING CODE TO SEND OTP
 @router.post("/send-otp")
-def send_otp(data: LoginRequest):
-    users = read_json(USERS_FILE)
+def send_otp(data: OTP):
     otps = read_json(OTPS_FILE)
 
     otp = str(random.randint(100000, 999999))
 
-    otps[data.phone] = {
-        "otp": otp,
-        "expires": time.time() + 300
-    }
-
-    users[data.phone] = {
-        "first_name": data.first_name,
-        "last_name": data.last_name,
-        "phone": data.phone
-    }
-
-    write_json(USERS_FILE, users)
     write_json(OTPS_FILE, otps)
 
     print(f"OTP for {data.phone} is {otp}")
 
-    return {"message": "OTP sent"}
+    return {"message": otp}
 
-
-@router.post("/verify-otp")
-def verify_otp(data: OTPVerify):
-    users = read_json(USERS_FILE)
-    otps = read_json(OTPS_FILE)
-
-    record = otps.get(data.phone)
-    if not record:
-        return {"success": False, "message": "OTP not found"}
-
-    if time.time() > record["expires"]:
-        return {"success": False, "message": "OTP expired"}
-
-    if data.otp != record["otp"]:
-        return {"success": False, "message": "Invalid OTP"}
-
-    # Optionally delete OTP after success
-    del otps[data.phone]
-    write_json(OTPS_FILE, otps)
-
-    return {
-        "success": True,
-        "user": users[data.phone],
-        "token": f"TOKEN-{data.phone}"
-    }
-@router.get("/test")
-def test():
-    a = read_json(USERS_FILE)
-    return {"message":"working"}
