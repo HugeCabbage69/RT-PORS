@@ -1,0 +1,9 @@
+--otp routes--
+
+prefix = /otp
+
+1. /me
+2. /send-otp
+3. /verify-otp
+4. /test
+
