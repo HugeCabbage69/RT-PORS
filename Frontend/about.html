@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+  <title>RT-PORS | About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link rel="stylesheet" href="about.css"/>
+</head>
+<body>
+
+  <div id="topbar">
+    <div id="logo" onclick="go('index.html')">
+      <img src="images/imglogo.png">
+      <span>RT-PORS</span>
+    </div>
+
+    <div id="buttons">
+      <button class="btn" onclick="go('status.html')">STATUS</button>
+      <button class="btn">REPORT</button>
+      <button class="btn" onclick="go('about.html')">ABOUT</button>
+    </div>
+
+    <div id="profile">
+      <div id="profileb">
+        <img src="images/profile.png">
+      </div>
+
+      <div id="profileblock">
+        <div class="popupt" onclick="link('/login')">Login</div>
+        <div class="popupt" onclick="link('/register')">Register</div>
+        <div class="popupt" onclick="link('/logout')">Logout</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page">
+
+    <div class="card bigc">
+      <h1>RT-PORS</h1>
+      <p>
+        sex
+        <br><br>
+        sexier
+      </p>
+    </div>
+
+    <div id="team">
+
+      <div class="card tc">
+        <img src="images/team1.png">
+        <h3>h</h3>
+        <p>h</p>
+      </div>
+
+      <div class="card tc">
+        <img src="images/team2.png">
+        <h3>h</h3>
+        <p>h</p>
+      </div>
+
+      <div class="card tc">
+        <img src="images/team3.png">
+        <h3>h</h3>
+        <p>h</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="profile.js"></script>
+  <script>
+    function go(p) {
+      window.location.href = p;
+    }
+
+    function link(r) {
+      alert("Backend route: " + r);
+    }
+  </script>
+
+</body>
+</html>

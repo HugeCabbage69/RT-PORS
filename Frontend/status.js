@@ -10,15 +10,41 @@ if ("geolocation" in navigator) {
       const lat = pos.coords.latitude;
       const lng = pos.coords.longitude;
 
-      map.setView([lat, lng], 16);
+      map.setView([lat, lng], 15);
 
       L.circleMarker([lat, lng], {
-        radius: 8,
-        color: "red",
-        fillColor: "red",
-        fillOpacity: 0.9
-      }).addTo(map);
+        radius: 6,
+        color: "blue",
+        fillColor: "blue",
+        fillOpacity: 1
+      }).addTo(map).bindPopup("You");
+
+      fr(lat, lng);
     },
-    () => alert("no geo")
+    () => alert("Location denied")
   );
+} else {
+  alert("No geo");
 }
+
+function fr(lat, lng) {
+  for (let i = 0; i < 5; i++) {
+    const offLat = lat + rand(-0.01, 0.01);
+    const offLng = lng + rand(-0.01, 0.01);
+
+    L.circle([offLat, offLng], {
+      radius: rand(150, 400),
+      color: "red",
+      fillColor: "red",
+      fillOpacity: 0.3
+    })
+    .addTo(map)
+    .bindPopup("Power outage report");
+  }
+}
+
+function rand(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+// replace fr() with fetch request @h3kler
