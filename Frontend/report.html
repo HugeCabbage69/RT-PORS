@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+  <title>RT-PORS | Report</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="report.css"/>
+</head>
+<body>
+
+  <div id="rpage">
+
+    <div id="topbar">
+      <div id="logo" onclick="go('index.html')">
+        <img src="images/imglogo.png">
+        <span>RT-PORS</span>
+      </div>
+
+      <div id="buttons">
+        <button class="btn" onclick="go('status.html')">STATUS</button>
+        <button class="btn" onclick="go('report.html')">REPORT</button>
+        <button class="btn" onclick="go('about.html')">ABOUT</button>
+      </div>
+
+      <div id="profile">
+        <div id="profileb">
+          <img src="images/profile.png">
+        </div>
+
+        <div id="profileblock">
+          <div class="popupt" onclick="link('/login')">Login</div>
+          <div class="popupt" onclick="link('/register')">Register</div>
+          <div class="popupt" onclick="link('/logout')">Logout</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="rbox">
+
+      <h1>Report Power Outage</h1>
+
+      <div id="rtype">
+        <button class="rbtn" onclick="sel('p')">Personal</button>
+        <button class="rbtn" onclick="sel('l')">Locality</button>
+      </div>
+      <div id="pform">
+        <input id="pname" placeholder="Full Name">
+        <input id="pphone" placeholder="Phone Number">
+        <input id="paddr" placeholder="Full Address">
+        <textarea id="pdesc" placeholder="Describe issue"></textarea>
+
+        <button class="sendbtn" onclick="sendp()">Submit Personal Report</button>
+      </div>
+      <div id="lform">
+        <p>This will send your current location as an outage report.</p>
+
+        <select id="lissue">
+          <option value="none">Select issue</option>
+          <option value="transformer">Transformer Issue</option>
+          <option value="line">Power Line Fault</option>
+          <option value="substation">Substation Failure</option>
+          <option value="weather">Weather Damage</option>
+          <option value="unknown">Unknown Outage</option>
+        </select>
+
+        <button class="sendbtn" onclick="sendl()">Send Locality Report</button>
+      </div>
+
+    </div>
+  </div>
+  <div id="rpopup">
+    <div id="rpopupbox">
+      <div id="rpopmsg">Sending...</div>
+    </div>
+  </div>
+
+  <script src="profile.js"></script>
+  <script src="report.js"></script>
+
+  <script>
+    function go(p) { window.location.href = p; }
+    function link(p) { alert("send to back: " + p); }
+  </script>
+
+</body>
+</html>

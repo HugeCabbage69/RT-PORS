@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background: #0f0f0f;
+  color: white;
+  font-family: system-ui, Arial, sans-serif;
+}
+
+#rpage {
+  min-height: 100vh;
+  padding-top: 64px;
+}
+
+#rbox {
+  width: min(90vw, 600px);
+  margin: 40px auto;
+  padding: clamp(20px, 4vw, 32px);
+  background: rgba(0,0,0,0.7);
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+}
+
+#rbox h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: clamp(20px, 3vw, 26px);
+}
+
+#rtype {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.rbtn {
+  padding: 10px 26px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  cursor: pointer;
+  font-size: clamp(14px, 2vw, 16px);
+}
+
+.rbtn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+#pform,
+#lform {
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#pform input,
+#pform textarea,
+#lform select {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  font-size: 14px;
+}
+
+#pform textarea {
+  resize: none;
+  height: 90px;
+}
+
+#lform p {
+  text-align: center;
+  opacity: 0.8;
+}
+
+.sendbtn {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: crimson;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.sendbtn:hover {
+  background: darkred;
+}
+
+#rpopup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999999;
+}
+
+#rpopupbox {
+  background: rgba(0,0,0,0.95);
+  padding: 28px 40px;
+  border-radius: 14px;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0,0,0,0.7);
+}
