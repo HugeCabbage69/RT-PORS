@@ -2,8 +2,17 @@
 
 prefix = /otp
 
-1. /me
-2. /send-otp
-3. /verify-otp
-4. /test
+1. /send-otp
 
+--login routes--
+
+YET TO BE COMPLETED
+
+-- register routes --
+
+1. /user -- registers new user
+
+-- marked_areas_routes -- 
+
+1. GET /recieve
+2. POST /put
