@@ -1,5 +1,7 @@
 from pydantic import BaseModel
 from typing import List
 
-class areas(BaseModel):
-    coordinate:List[List[int]]
+class areas_get(BaseModel):
+    coordinate:List[List[float]]
+class areas_put(BaseModel):
+    coordinate:List[float]
