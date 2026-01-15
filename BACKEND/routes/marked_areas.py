@@ -30,6 +30,9 @@ def get():
 @router.post("/put")
 def put(data:areas_put):
     areas_data = read_json(AREAS_FILE)
-    areas_data[data.type].append(data.coordinate)
+    if data.type in areas_data:
+        areas_data[data.type].append(data.coordinate)
+    else:
+        areas_data[data.type] = [data.coordinate]
     write_json(AREAS_FILE,areas_data)
     return {"message":"succesfull"}
